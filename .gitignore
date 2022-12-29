@@ -1,4 +1,4 @@
 /layout
 src/css_dir/ac_example.css
-.gitignore
 src/scss_dir/ac_example.scss
+src/css_dir/ac_example.css.map
