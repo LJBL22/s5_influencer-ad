@@ -747,7 +747,24 @@ body {
   cursor: pointer;
 }
 
+.scrollbar {
+  scrollbar-width: auto;
+  scrollbar-color: #0A4C95 #C2D2E4;
+}
+.scrollbar::-webkit-scrollbar {
+  width: 20px;
+  background-color: #C2D2E4;
+}
+.scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: #0A4C95;
+}
+
 /* style start */
+#main-app {
+  height: 100%;
+}
+
 nav {
   width: 60px;
   position: fixed;
@@ -769,14 +786,17 @@ nav i {
 }
 
 #main-content {
+  height: 100%;
   margin-left: 60px;
   display: flex;
 }
 
 .card-list-panel {
+  height: 100%;
   flex: 0 0 250px;
   background-color: #fff;
   z-index: 20;
+  overflow-y: scroll;
 }
 .card-list-panel .flex-row {
   display: flex;

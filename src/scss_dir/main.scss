@@ -250,7 +250,38 @@
    cursor: pointer;
  }
 
+ .scrollbar {
+   // 判斷不一定是 y 軸，所以這行寫在發生的區塊
+   //  overflow-y: scroll;
+   //  only keyword & global values, no nums
+   scrollbar-width: auto;
+   //  thumb & background coloer
+   scrollbar-color: #0A4C95 #C2D2E4;
+
+   &::-webkit-scrollbar {
+     width: 20px;
+     background-color: #C2D2E4;
+   }
+
+   &::-webkit-scrollbar-thumb {
+     border-radius: 3px;
+     //  無效
+     //  width: 15px;
+     background-color: #0A4C95;
+     // background-color: rgba(0, 0, 0, 0.1);
+   }
+ }
+
+ //  .scroller {
+ //    width: 6px;
+ //    scrollbar-color: green;
+ //    scrollbar-width: thin;
+ //  }
+
  /* style start */
+ #main-app {
+   height: 100%;
+ }
 
  nav {
    width: 60px;
@@ -276,16 +307,20 @@
  }
 
  #main-content {
+   height: 100%;
    margin-left: 60px;
    display: flex;
  }
 
  .card-list-panel {
+   height: 100%;
    // 固定 card-panel 為 250px 的意思，不會受螢幕大小或其他影響
    flex: 0 0 250px;
    background-color: $white;
    @extend %standard-boxshadow;
    z-index: 20;
+   // 幫 cart-list-panel 製作一個 y-軸 (垂直) 的捲軸。
+   overflow-y: scroll;
 
    .flex-row {
      display: flex;
