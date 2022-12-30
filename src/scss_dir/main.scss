@@ -458,14 +458,13 @@
    background-color: $white;
    padding: 32px 0;
    flex: 1;
+   overflow-y: scroll;
 
-   .part {
-     height: 70%;
+   .terms-panel {
+     padding: 16px;
+     border: 1px solid $light-gray;
+     border-radius: 5px;
+     max-height: 300px;
+     overflow-y: scroll;
    }
-
-   //DRY
-   //  .form-container {
-   //    width: 80%;
-   //    margin: 0 auto;
-   //  }
  }
