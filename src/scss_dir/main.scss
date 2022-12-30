@@ -468,3 +468,29 @@
      overflow-y: scroll;
    }
  }
+
+ form {
+   .form-row {
+     margin-bottom: 24px;
+
+     //  指定第一子層的 label
+     >label {
+       display: block;
+       margin-bottom: 6px;
+       font-weight: 500;
+     }
+
+     input {
+       border: 1px solid $light-gray;
+       border-radius: 5px;
+       font-size: 16px;
+       padding: .5em;
+
+       &:hover,
+       &:focus {
+         border-color: $dark-gray;
+       }
+     }
+
+   }
+ }

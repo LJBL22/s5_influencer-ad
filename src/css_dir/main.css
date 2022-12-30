@@ -916,4 +916,22 @@ nav i {
   overflow-y: scroll;
 }
 
+form .form-row {
+  margin-bottom: 24px;
+}
+form .form-row > label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+form .form-row input {
+  border: 1px solid #a7aaaf;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 0.5em;
+}
+form .form-row input:hover, form .form-row input:focus {
+  border-color: #4a4a4a;
+}
+
 /*# sourceMappingURL=main.css.map */
