@@ -373,18 +373,27 @@
    }
  }
 
+ //  right-content starts
+
  .right-content {
    flex: 1;
+   display: flex;
+   flex-direction: column;
+
+   .container {
+     width: 80%;
+     margin: 0 auto;
+   }
  }
 
  .stepper-panel {
    height: 120px;
-   padding-top: 40px;
 
    .stepper-container {
-     width: 80%;
-     margin: 0 auto;
+     //  width: 80%; DRY
+     //  margin: 0 auto;
      display: flex;
+     padding-top: 40px;
    }
 
    .step {
@@ -440,4 +449,23 @@
        left: calc(-50% + 20px);
      }
    }
+ }
+
+ //  form-panel
+
+ .form-panel {
+   @extend %standard-boxshadow;
+   background-color: $white;
+   padding: 32px 0;
+   flex: 1;
+
+   .part {
+     height: 70%;
+   }
+
+   //DRY
+   //  .form-container {
+   //    width: 80%;
+   //    margin: 0 auto;
+   //  }
  }
