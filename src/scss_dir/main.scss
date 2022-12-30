@@ -490,7 +490,43 @@
        &:focus {
          border-color: $dark-gray;
        }
-     }
 
+       //  attribute 選擇器
+       &[type="checkbox"] {
+         // 雷雷雷注意，不能直接改此勾選的樣式
+         // 需要先取消預設
+         -webkit-appearance: none;
+         border-radius: 3px;
+         position: relative;
+
+         &:checked {
+           background-color: $secondary-blue;
+
+           &::after {
+             content: "\2714";
+             color: $white;
+             font-size: 12px;
+             position: absolute;
+             top: 0;
+             left: 3px;
+           }
+         }
+
+         &:focus {
+           border-color: $light-gray;
+         }
+
+         &:hover {
+           background-color: $dark-gray;
+         }
+
+         // 之後所有的 label
+         ~label {
+           display: inline-block;
+           font-weight: normal;
+           margin: 0;
+         }
+       }
+     }
    }
  }
