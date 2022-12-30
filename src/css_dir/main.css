@@ -778,6 +778,10 @@ nav i {
   background-color: #fff;
   z-index: 20;
 }
+.card-list-panel .flex-row {
+  display: flex;
+  align-items: center;
+}
 .card-list-panel .card {
   width: 200px;
   margin-top: 16px;
@@ -788,6 +792,12 @@ nav i {
   font-size: 14px;
   cursor: pointer;
   opacity: 0.5;
+}
+.card-list-panel .card:hover, .card-list-panel .card.active {
+  opacity: 1;
+}
+.card-list-panel .card.active {
+  border-color: #a7aaaf;
 }
 .card-list-panel .card i {
   width: 20px;
