@@ -748,16 +748,16 @@ body {
 }
 
 .scrollbar {
-  scrollbar-width: auto;
+  padding-left: 6px;
+  scrollbar-width: thin;
   scrollbar-color: #0A4C95 #C2D2E4;
 }
 .scrollbar::-webkit-scrollbar {
-  width: 20px;
-  background-color: #C2D2E4;
+  width: 6px;
 }
 .scrollbar::-webkit-scrollbar-thumb {
   border-radius: 3px;
-  background-color: #0A4C95;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 /* style start */

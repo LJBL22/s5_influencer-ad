@@ -251,24 +251,22 @@
  }
 
  .scrollbar {
-   // 判斷不一定是 y 軸，所以這行寫在發生的區塊
-   //  overflow-y: scroll;
-   //  only keyword & global values, no nums
-   scrollbar-width: auto;
-   //  thumb & background coloer
+   // 為了讓 card 感覺置中，因此左邊 paddin 右邊 scrollbar
+   padding-left: 6px;
+   // Firefox scrollbar setting
+   // overflow-y: scroll; 判斷不一定是 y 軸，所以這行寫在發生的區塊
+   scrollbar-width: thin; // no nums //約莫 9px auto 約莫 15px；accessibility 建議是統一用 auto
    scrollbar-color: #0A4C95 #C2D2E4;
 
    &::-webkit-scrollbar {
-     width: 20px;
-     background-color: #C2D2E4;
+     width: 6px;
+     //  background-color: #C2D2E4;
    }
 
    &::-webkit-scrollbar-thumb {
      border-radius: 3px;
-     //  無效
-     //  width: 15px;
-     background-color: #0A4C95;
-     // background-color: rgba(0, 0, 0, 0.1);
+     //  width: 15px; 無效
+     background-color: rgba(0, 0, 0, 0.1);
    }
  }
 
