@@ -379,6 +379,7 @@
 
  .stepper-panel {
    height: 120px;
+   padding-top: 40px;
 
    .stepper-container {
      width: 80%;
@@ -406,6 +407,22 @@
      .label-container {
        margin-top: 10px;
        color: $light-gray;
+     }
+
+     &.checked .circle-container::after {
+       content: '\2714';
+     }
+
+     &.checked,
+     &.active {
+       .circle-container {
+         background-color: $freedom-blue;
+         color: $body-color;
+       }
+
+       .label-container {
+         color: $body-color;
+       }
      }
    }
  }

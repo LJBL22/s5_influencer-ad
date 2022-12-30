@@ -844,6 +844,7 @@ nav i {
 
 .stepper-panel {
   height: 120px;
+  padding-top: 40px;
 }
 .stepper-panel .stepper-container {
   width: 80%;
@@ -875,6 +876,16 @@ nav i {
 .stepper-panel .step .label-container {
   margin-top: 10px;
   color: #a7aaaf;
+}
+.stepper-panel .step.checked .circle-container::after {
+  content: "✔";
+}
+.stepper-panel .step.checked .circle-container, .stepper-panel .step.active .circle-container {
+  background-color: #02b8ff;
+  color: #18253d;
+}
+.stepper-panel .step.checked .label-container, .stepper-panel .step.active .label-container {
+  color: #18253d;
 }
 
 /*# sourceMappingURL=main.css.map */
