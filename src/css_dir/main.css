@@ -894,6 +894,8 @@ nav i {
   background: #a7aaaf;
   position: absolute;
   top: 12px;
+  right: calc(50% + 20px);
+  left: calc(-50% + 20px);
 }
 
 /*# sourceMappingURL=main.css.map */

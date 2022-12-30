@@ -436,8 +436,8 @@
        top: 12px;
        //  width: 100%; 檢視用
        //  在這個情境下 要同時設定 right & left 這條線才會出現
-       //  right: calc(50% + 20px);
-       //  left: calc(-50% + 20px);
+       right: calc(50% + 20px);
+       left: calc(-50% + 20px);
      }
    }
  }
