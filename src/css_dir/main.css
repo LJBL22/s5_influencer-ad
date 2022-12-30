@@ -855,6 +855,7 @@ nav i {
   flex: 1;
   text-align: center;
   line-height: 24px;
+  position: relative;
 }
 .stepper-panel .step:nth-child(1) .circle-container::after {
   content: "1";
@@ -886,6 +887,14 @@ nav i {
 }
 .stepper-panel .step.checked .label-container, .stepper-panel .step.active .label-container {
   color: #18253d;
+}
+.stepper-panel .step .connect-line {
+  display: block;
+  height: 1px;
+  background: #a7aaaf;
+  position: absolute;
+  top: 12px;
+  right: 50%;
 }
 
 /*# sourceMappingURL=main.css.map */

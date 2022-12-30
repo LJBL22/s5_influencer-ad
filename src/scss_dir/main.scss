@@ -394,6 +394,9 @@
      @include getStepNums(3);
      //  避免 firefox 數字偏高情況
      line-height: 24px;
+     //  檢視用
+     //  border: 1px solid red;
+     position: relative;
 
      .circle-container {
        height: 24px;
@@ -423,6 +426,18 @@
        .label-container {
          color: $body-color;
        }
+     }
+
+     .connect-line {
+       display: block;
+       height: 1px;
+       background: $light-gray;
+       position: absolute;
+       top: 12px;
+       //  width: 100%; 檢視用
+       //  在這個情境下 要同時設定 right & left 這條線才會出現
+       //  right: calc(50% + 20px);
+       //  left: calc(-50% + 20px);
      }
    }
  }
