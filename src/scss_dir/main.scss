@@ -163,6 +163,18 @@
    box-shadow: 3px 0 13px 0 rgba(100, 112, 134, 0.1);
  }
 
+ %input-style {
+   border: 1px solid $light-gray;
+   border-radius: 5px;
+   font-size: 16px;
+   padding: .5em;
+
+   &:hover,
+   &:focus {
+     border-color: $dark-gray;
+   }
+ }
+
  html {
    font-size: 16px;
    height: 100%;
@@ -481,15 +493,7 @@
      }
 
      input {
-       border: 1px solid $light-gray;
-       border-radius: 5px;
-       font-size: 16px;
-       padding: .5em;
-
-       &:hover,
-       &:focus {
-         border-color: $dark-gray;
-       }
+       @extend %input-style;
 
        //提出共用樣式
        &[type="checkbox"],
@@ -560,6 +564,26 @@
        &[type="number"] {
          width: 60px;
        }
+     }
+
+     .select-wrapper {
+       border: 1px solid red;
+       position: relative;
+
+       &::after {
+         content: "\25BE";
+         position: absolute;
+         top: 50%;
+         right: 8px;
+         transform: translateY(-50%)
+       }
+     }
+
+     select {
+       @extend %input-style;
+       -webkit-appearance: none;
+       cursor: pointer;
+
      }
    }
  }
