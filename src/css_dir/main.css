@@ -933,15 +933,23 @@ form .form-row input {
 form .form-row input:hover, form .form-row input:focus {
   border-color: #4a4a4a;
 }
-form .form-row input[type=checkbox] {
+form .form-row input[type=checkbox], form .form-row input[type=radio] {
+  cursor: pointer;
+}
+form .form-row input[type=checkbox] ~ label, form .form-row input[type=radio] ~ label {
+  display: inline-block;
+  font-weight: normal;
+  margin: 0;
+}
+form .form-row input[type=checkbox][type=checkbox], form .form-row input[type=radio][type=checkbox] {
   -webkit-appearance: none;
   border-radius: 3px;
   position: relative;
 }
-form .form-row input[type=checkbox]:checked {
+form .form-row input[type=checkbox][type=checkbox]:checked, form .form-row input[type=radio][type=checkbox]:checked {
   background-color: #3c88fd;
 }
-form .form-row input[type=checkbox]:checked::after {
+form .form-row input[type=checkbox][type=checkbox]:checked::after, form .form-row input[type=radio][type=checkbox]:checked::after {
   content: "✔";
   color: #fff;
   font-size: 12px;
@@ -949,16 +957,21 @@ form .form-row input[type=checkbox]:checked::after {
   top: 0;
   left: 3px;
 }
-form .form-row input[type=checkbox]:focus {
+form .form-row input[type=checkbox][type=checkbox]:focus, form .form-row input[type=radio][type=checkbox]:focus {
   border-color: #a7aaaf;
 }
-form .form-row input[type=checkbox]:hover {
+form .form-row input[type=checkbox][type=checkbox]:hover, form .form-row input[type=radio][type=checkbox]:hover {
   background-color: #4a4a4a;
 }
-form .form-row input[type=checkbox] ~ label {
-  display: inline-block;
-  font-weight: normal;
-  margin: 0;
+form .form-row input[type=radio] {
+  -webkit-appearance: none;
+  border-radius: 50%;
+}
+form .form-row input[type=radio]:checked {
+  box-shadow: inset 0 0 0 5px #3c88fd;
+}
+form .form-row input[type=radio] ~ label {
+  margin-right: 20px;
 }
 
 /*# sourceMappingURL=main.css.map */
