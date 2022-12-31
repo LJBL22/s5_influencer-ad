@@ -502,35 +502,35 @@
            font-weight: normal;
            margin: 0;
          }
+       }
 
-         //  attribute 選擇器
-         &[type="checkbox"] {
-           // 雷雷雷注意，不能直接改此勾選的樣式
-           // 需要先取消預設
-           -webkit-appearance: none;
-           border-radius: 3px;
-           position: relative;
+       //  attribute 選擇器
+       &[type="checkbox"] {
+         // 雷雷雷注意，不能直接改此勾選的樣式
+         // 需要先取消預設
+         -webkit-appearance: none;
+         border-radius: 3px;
+         position: relative;
 
-           &:checked {
-             background-color: $secondary-blue;
+         &:checked {
+           background-color: $secondary-blue;
 
-             &::after {
-               content: "\2714";
-               color: $white;
-               font-size: 12px;
-               position: absolute;
-               top: 0;
-               left: 3px;
-             }
+           &::after {
+             content: "\2714";
+             color: $white;
+             font-size: 12px;
+             position: absolute;
+             top: 0;
+             left: 3px;
            }
+         }
 
-           &:focus {
-             border-color: $light-gray;
-           }
+         &:focus {
+           border-color: $light-gray;
+         }
 
-           &:hover {
-             background-color: $dark-gray;
-           }
+         &:hover {
+           background-color: $dark-gray;
          }
        }
 
@@ -545,6 +545,15 @@
 
          ~label {
            margin-right: 20px;
+         }
+       }
+
+       &[type="date"] {
+         cursor: pointer;
+
+         //  color: $light-gray; //可以改，可是選擇玩也會是灰色
+         &:invalid {
+           color: #747474;
          }
        }
      }
