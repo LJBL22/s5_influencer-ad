@@ -556,6 +556,10 @@
            color: #747474;
          }
        }
+
+       &[type="number"] {
+         width: 60px;
+       }
      }
    }
  }
