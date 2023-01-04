@@ -72,10 +72,13 @@ const influencers = [
 ]
 
 const cardList = document.getElementById('card-list')
+// form 節點以及選取其下所有的 .part
 const form = document.getElementById('a-form')
 const formParts = form.querySelectorAll('.part')
+// #step-control 及選取其下所有的 .step
 const stepControl = document.getElementById('step-control')
 const steps = stepControl.querySelectorAll('.step')
+// #btn-control 以及選取其下所有的 .btn
 const btnControl = document.getElementById('btn-control')
 const nextBtn = btnControl.querySelector('.btn-primary')
 const prevBtn = btnControl.querySelector('.btn-outline')
@@ -83,27 +86,21 @@ const prevBtn = btnControl.querySelector('.btn-outline')
 let activeCard = 0
 let step = 0
 
-;(function () {
-  influencers.forEach((influencer) => {
-    cardList.innerHTML += `
-        <div id="${influencer.name}-${influencer.id}" class="card ${
-      influencer.id === activeCard + 1 ? 'active' : ''
-    }">
+  // ? ; & 結尾的()
+  ; (function () {
+    influencers.forEach((influencer) => {
+      cardList.innerHTML += `
+        <div id="${influencer.name}-${influencer.id}" class="card ${influencer.id === activeCard + 1 ? 'active' : ''}">
         <div class="name">${influencer.name}</div>
-        <div class="flex-row"><i class="fab fa-youtube"></i><span>${
-          influencer.youtube
-        }</span></div>
-        <div class="flex-row"><i class="fab fa-facebook-square"></i><span>${
-          influencer.fb
-        }</span></div>
-        <div class="flex-row"><i class="fab fa-instagram"></i><span>${
-          influencer.ig
-        }</span></div>
+        <div class="flex-row"><i class="fab fa-youtube"></i><span>${influencer.youtube}</span></div>
+        <div class="flex-row"><i class="fab fa-facebook-square"></i><span>${influencer.fb}</span></div>
+        <div class="flex-row"><i class="fab fa-instagram"></i><span>${influencer.ig}</span></div>
         </div>
      `
-  })
-})()
+    })
+  })()
 
+// 不太確定 {target} ，function 中放一個 object?
 function handleCardClicked({ target }) {
   const cards = cardList.querySelectorAll('.card')
   const node = target.closest('.card')
@@ -117,7 +114,9 @@ function handleCardClicked({ target }) {
 }
 
 function handleBtnControlClicked(e) {
+  // 不要往上跑
   e.preventDefault()
+  // steps[step] ＝ 該 dom 的第幾個 index (從 0 開始)
   const nowStep = steps[step]
   if (e.target.matches('.btn-primary') && e.target.innerHTML === '下一步') {
     const nextStep = steps[step + 1]
@@ -141,6 +140,8 @@ function handleBtnControlClicked(e) {
 
 function setBtnDisabled() {
   if (step === 0) {
+    // 一般來說是寫 .setAttribute(name, value)
+    // mdn 針對 disabled 是寫空字串 ('disabled', '')
     prevBtn.setAttribute('disabled', 'disabled')
   } else {
     prevBtn.removeAttribute('disabled')
