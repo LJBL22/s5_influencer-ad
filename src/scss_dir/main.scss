@@ -472,6 +472,21 @@
    flex: 1;
    overflow-y: scroll;
 
+   .form-container {
+     height: 100%;
+
+     form {
+       height: 100%;
+       display: flex;
+       flex-direction: column;
+
+       //讓 content 把剩餘填滿，因此 btn 會被擠到最下排
+       .form-content {
+         flex: 1;
+       }
+     }
+   }
+
    .terms-panel {
      padding: 16px;
      border: 1px solid $light-gray;
@@ -607,5 +622,32 @@
        resize: none;
        overflow-y: scroll;
      }
+   }
+ }
+
+ .btn {
+   font-size: 16px;
+   border-radius: 5px;
+   height: 32px;
+   padding: 0 16px;
+   box-shadow: 1px 1px 5px #a6a6a6;
+
+   &.btn-primary {
+     background-color: $secondary-blue;
+     color: $white;
+   }
+
+   &.btn-outline {
+     color: $dark-gray;
+   }
+
+   &:hover {
+     //加深陰影
+     box-shadow: 1px 1px 5px $dark-gray;
+   }
+
+   //  選擇狀態
+   &[disabled] {
+     opacity: 0.5;
    }
  }
