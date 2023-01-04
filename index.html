@@ -97,14 +97,16 @@
                 </div>
                 <div class="form-row">
                   <label>廣告類別</label>
-                  <select name="a-type" id="a-type">
-                    <option value="" disabled selected>請選擇廣告類別</option>
-                    <option value="game">遊戲</option>
-                    <option value="fashion">時尚</option>
-                    <option value="travel">旅遊</option>
-                    <option value="shopping">購物</option>
-                    <option value="all">不拘</option>
-                  </select>
+                  <div class="select-wrapper">
+                    <select name="a-type" required id="a-type">
+                      <option value="" disabled selected>請選擇廣告類別</option>
+                      <option value="game">遊戲</option>
+                      <option value="fashion">時尚</option>
+                      <option value="travel">旅遊</option>
+                      <option value="shopping">購物</option>
+                      <option value="all">不拘</option>
+                    </select>
+                  </div>
                 </div>
                 <div class="form-row">
                   <label for="">受眾性別</label>
@@ -120,7 +122,7 @@
                 <div class="form-row">
                   <label for="">受眾地點</label>
                   <div class="select-wrapper">
-                    <select name="a-type" id="a-location">
+                    <select name="a-type" required id="a-location">
                       <option value="" disabled selected>請選擇受眾地點</option>
                       <option value="">北部</option>
                       <option value="">中部</option>

@@ -567,15 +567,25 @@
      }
 
      .select-wrapper {
-       border: 1px solid red;
+       //  border: 1px solid red;
        position: relative;
+       width: 25%;
+       z-index: 0;
 
        &::after {
-         content: "\25BE";
+         //  content: "\25BE";
+
+         //  手刻三角形
+         content: "";
+         border-style: solid;
+         border-width: 6px 5px 0 5px;
+         border-color: $light-gray transparent transparent transparent;
+
          position: absolute;
          top: 50%;
          right: 8px;
-         transform: translateY(-50%)
+         transform: translateY(-50%);
+         z-index: -1;
        }
      }
 
@@ -583,7 +593,12 @@
        @extend %input-style;
        -webkit-appearance: none;
        cursor: pointer;
+       width: 100%;
+       background-color: transparent;
 
+       &:invalid {
+         color: #747474;
+       }
      }
    }
  }
