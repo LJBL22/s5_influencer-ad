@@ -600,5 +600,12 @@
          color: #747474;
        }
      }
+
+     textarea {
+       @extend %input-style;
+       //  取消預設
+       resize: none;
+       overflow-y: scroll;
+     }
    }
  }
