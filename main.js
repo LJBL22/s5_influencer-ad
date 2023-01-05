@@ -86,9 +86,14 @@ const prevBtn = btnControl.querySelector('.btn-outline')
 let activeCard = 0
 let step = 0
 
-  // ? ; & 結尾的()
+  // 利用條件（三元）運算子 ? ; 讓初始 index 0 可比對 id 為 1 ，加上 active 。
+  // 後續 id 非 1 則為空值
+  // 後續由點擊事件來上 active class
+  // 代表一進此畫面即執行的 javascript
+  //IIFE immediately invoked function expression 不會佔據記憶體
   ; (function () {
     influencers.forEach((influencer) => {
+      // card template
       cardList.innerHTML += `
         <div id="${influencer.name}-${influencer.id}" class="card ${influencer.id === activeCard + 1 ? 'active' : ''}">
         <div class="name">${influencer.name}</div>
@@ -99,26 +104,36 @@ let step = 0
      `
     })
   })()
+//第一個 () function expression 匿名函式 ；第二個括號就是 function 執行/呼叫的意思
+//分號是因為採用的 coding style 省略分號，但這裡的是不可省略的
 
-// 不太確定 {target} ，function 中放一個 object?
+// 直接解構 event (pointerEvent 是一個大物件) ，取出其中的 {target} 做為參數
 function handleCardClicked({ target }) {
   const cards = cardList.querySelectorAll('.card')
+  // Element.closest() 會從該元素開始往父層..的父層..root去尋找符合括弧中 CSS 選擇器的 node 
   const node = target.closest('.card')
+
+  // 若無，可能是整個 card-list panel 的空白處，則返回 null
+  // console.log(node);
+  // 若成立，表有選到對應的 .card 
   if (node) {
-    const idArr = node.id.split('-')
-    const num = Number(idArr[idArr.length - 1])
+    const idArr = node.id.split('-') // 抓 html 的 id 並 split // 分開名字與id數字，從 - 區分
+    // console.log(node.id);
+    // console.log(node.id.split('-'));
+    const num = Number(idArr[idArr.length - 1]) // 取split玩的陣列最後一個值（網紅id）// idArr 取id數字索引位置為 1，length數為 2 所以-1
     cards[activeCard].classList.remove('active')
-    cards[num - 1].classList.add('active')
+    cards[num - 1].classList.add('active') // 取出符合的id數字-1 為卡片點取位置
     activeCard = num - 1
   }
 }
 
 function handleBtnControlClicked(e) {
-  // 不要往上跑
+  // 避免 btn 預設送出、並 refresh 頁面
   e.preventDefault()
-  // steps[step] ＝ 該 dom 的第幾個 index (從 0 開始)
+  // 現在的步驟 => 該 dom 的第幾個 index (從 0 開始)
   const nowStep = steps[step]
   if (e.target.matches('.btn-primary') && e.target.innerHTML === '下一步') {
+    // 下一個步驟 => 該 dom 的 i+1 個 index
     const nextStep = steps[step + 1]
     nowStep.classList.remove('active')
     nowStep.classList.add('checked')
